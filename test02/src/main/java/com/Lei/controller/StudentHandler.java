@@ -3,35 +3,46 @@ package com.Lei.controller;
 import com.Lei.entity.Student;
 import com.Lei.repository.impl.StudentRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Collection;
-
-@RestController
+@Controller
 @RequestMapping("/student")
 public class StudentHandler {
     @Autowired
     private StudentRepositoryImpl studentRepository;
 
-    @GetMapping("/findAll")
-    public Collection<Student> findAll() {
-        return studentRepository.findAll();
+    @GetMapping("/index")
+    public ModelAndView index() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("index");
+        modelAndView.addObject("list", studentRepository.findAll());
+        return modelAndView;
     }
 
     @GetMapping("/findById/{id}")
-    public Student findById(@PathVariable("id") long id) {
-        return studentRepository.findById(id);
+    public ModelAndView findById(@PathVariable("id") long id) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("update");
+        modelAndView.addObject("student", studentRepository.findById(id));
+        return modelAndView;
     }
 
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") long id) {
+        studentRepository.deleteById(id);
+        return "redirect:/student/index";
+    }
 
     @PostMapping("/save")
-    public void save(@RequestBody Student student){
+    public String save( Student student) {
         studentRepository.save(student);
+        return "redirect:/student/index";
     }
-
-    @DeleteMapping("/deleteById/{id}")
-    public void deleteById(@PathVariable("id") long id){
-        studentRepository.deleteById(id);
+    @PostMapping("/update") 
+    public String update( Student student) {
+        studentRepository.save(student);
+        return "redirect:/student/index";
     }
 }
