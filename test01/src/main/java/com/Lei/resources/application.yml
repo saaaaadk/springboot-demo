@@ -2,8 +2,7 @@ server:
   port: 9090
 spring:
   thymeleaf:
-    prefix: /templates/
+    prefix: classpath:/templates/
     suffix: .html
     mode: HTML5
-    encoding: utf-8
-    
+    encoding: UTF-8
