@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b1291a0-ac4e-4be4-a655-8a6b0922c651" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Lei/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Lei/resources/templates/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lei/controller/IndexHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lei/controller/IndexHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lei/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lei/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lei/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lei/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Lei/controller/IndexHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Lei/controller/IndexHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" />
-    </list>
+    <list default="true" id="9b1291a0-ac4e-4be4-a655-8a6b0922c651" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,7 +129,7 @@
       <workItem from="1664848543614" duration="50000" />
       <workItem from="1664851266930" duration="218000" />
       <workItem from="1664864727862" duration="10612000" />
-      <workItem from="1664883635631" duration="1094000" />
+      <workItem from="1664883635631" duration="1159000" />
     </task>
     <servers />
   </component>
