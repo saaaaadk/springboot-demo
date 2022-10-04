@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{https://www.baidu.com}">跳转1</a>
+<a th:href="@{http://localhost:9090/index/url/{name}(name=${name})}">跳转2</a>
+<!--<img th:src="${img}">-->
+<!--<div th:style="|background:url(${img})|">-->
+<!--</div>-->
+<input th:value="${age gt 30?'青年':'中年'}">
+<div th:switch="${gender}">
+    <p th:case="女">nv</p>
+    <p th:case="男">nan</p>
+    <p th:case="*">unknown</p>
+</div>
+<p th:text="${#request.getAttribute('request')}"></p>
+<p th:text="${#request.getAttribute('session')}"></p>
+<p th:text="${#locale.country}"></p>
+
+<p th:text="${#dates.format(date,'yyyy-MM-dd')}"></p>
+<p th:text="${#dates.createToday()}"></p>
+<p th:text="${#dates.createNow()}"></p>
+<br>
+<p th:text="${#strings.isEmpty(name)}"></p>
+<p th:text="${#lists.isEmpty(users)}"></p>
+<p th:text="${#strings.length(name)}"></p>
+<p th:text="${#strings.concat(name,name,name)}"></p>
+<p th:text="${#strings.randomAlphanumeric(count)}"></p>
+
+</body>
+</html>

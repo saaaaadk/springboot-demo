@@ -6,3 +6,5 @@ spring:
     suffix: .html
     mode: HTML5
     encoding: UTF-8
+#  datasource:
+#    url:
