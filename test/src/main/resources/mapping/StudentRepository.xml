@@ -5,8 +5,7 @@
 <mapper namespace="com.Lei.repository.StudentRepository">
     <select id="findAll" resultType="Student">
         select *
-        from student
-    </select>
+        from student</select>
     <select id="findById" parameterType="java.lang.Long" resultType="Student">
         select *
         from student
@@ -16,16 +15,13 @@
         insert into student (name, score, birthday)
         values (#{name}, #{score}, #{birthday})
     </insert>
-    <update id="update" parameterType="Student">
-        update student
-        set name    =#{name},
-            score   =#{score},
-            birthday=#{birthday}
-        where id = #{id}
+    <update id="update">
+        update student set name = #{name} ,score = #{score} ,birthday=#{birthday}
     </update>
     <delete id="deleteById" parameterType="java.lang.Long">
         delete
         from student
-        where id = #{id};
+        where id = #{id}
     </delete>
+
 </mapper>
