@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f355ea13-13a3-466e-991b-279ad6b2b2c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lei/controller/StudentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lei/controller/StudentHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lei/repository/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lei/repository/StudentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/StudentRepository.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/StudentRepository.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Lei/controller/StudentHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Lei/controller/StudentHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Lei/repository/StudentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Lei/repository/StudentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/StudentRepository.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/StudentRepository.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f355ea13-13a3-466e-991b-279ad6b2b2c9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +63,8 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings"
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "098f6bcd4621d373cade4e832627b4f6"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -110,6 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664885766981</updated>
       <workItem from="1664885768437" duration="4992000" />
+      <workItem from="1664938720917" duration="167000" />
     </task>
     <servers />
   </component>
