@@ -10,25 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f22a4cb-5a74-4fc8-aef6-f52fdc41742b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Lei/configuration/CustomObjectMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Lei/controller/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/demo/test.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../vue-project/src/store/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../vue-project/vite.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../test/src/main/java/com/Lei/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/src/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue-project/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-project/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +74,8 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "spring"
+    "settings.editor.selected.configurable": "spring",
+    "spring.configuration.checksum": "3bdea023ebb7cec74a0a332d2b0e04f1"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -100,7 +84,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="tomcat9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="tomcat9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:9090/admin" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -199,6 +183,7 @@
       <option name="presentableId" value="Default" />
       <updated>1665620853453</updated>
       <workItem from="1665620854964" duration="7898000" />
+      <workItem from="1665800021213" duration="39000" />
     </task>
     <servers />
   </component>

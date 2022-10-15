@@ -7,7 +7,7 @@
 
     <tlib-version>1.0</tlib-version>
     <short-name>myshortname</short-name>
-    <uri>https://mycompany.com</uri>
+    <uri>http://mycompany.com</uri>
 
     <!-- Invoke 'Generate' action to add tags or functions -->
 
