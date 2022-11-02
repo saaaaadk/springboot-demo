@@ -1,0 +1,41 @@
+server:
+#  端口
+  port: 9090
+  servlet:
+    context-path: /
+spring:
+  datasource:
+#    数据库连接
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis?useUnicode=true&charset=utf-8
+    username: root
+    password: root
+#    redis
+  redis:
+    host: localhost
+    port: 6379
+#    密码默认为空
+    password:
+#      连接时间与缓存池的最大限制
+    connect-timeout: 10s
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: 200s
+        max-idle: 8
+        min-idle: 0
+#        mybati-plus 配置
+mybatis-plus:
+  global-config:
+#    数据库配置
+    db-config:
+#      id自增
+      id-type: auto
+  configuration:
+#    自动驼峰转换
+    map-underscore-to-camel-case: true
+#    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# 配置包的位置
+  mapper-locations: classpath:mapper/*.xml
