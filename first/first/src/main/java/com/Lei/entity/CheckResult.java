@@ -1,6 +1,6 @@
 package com.Lei.entity;
 
-import cn.hutool.jwt.Claims;
+import io.jsonwebtoken.Claims;
 import lombok.Data;
 
 @Data
