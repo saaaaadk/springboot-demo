@@ -1,12 +1,22 @@
 <template>
   <div class="login">
-    <el-form ref="loginRef" :model="loginForm" rules="loginRules" class="login-form">
+    <el-form ref="loginRef" :model="loginForm" :rules="loginRules" class="login-form">
       <h3 class="title">Java1234 Vue3 后台管理系统</h3>
       <el-form-item prop="username">
-        <el-input type="text" size="large" autocomplete="off" placeholder="账号"/>
+        <el-input v-model="loginForm.username" type="text" size="large" autocomplete="off" placeholder="账号"
+        >
+          <template #prefix>
+            <svg-icon icon="user"/>
+          </template>
+        </el-input>
       </el-form-item>
       <el-form-item prop="password">
-        <el-input type="password" size="large" autocomplete="off" placeholder="密码" @keyup.enter="handleLogin"/>
+        <el-input v-model="loginForm.password" type="password" size="large" autocomplete="off" placeholder="密码"
+                  @keyup.enter="handleLogin">
+          <template #prefix>
+            <svg-icon icon="password"/>
+          </template>
+        </el-input>
       </el-form-item>
       <el-checkbox style="margin:0 0 25px 0;">记住密码</el-checkbox>
       <el-form-item style="width: 100px;">
@@ -16,16 +26,47 @@
       </el-form-item>
     </el-form>
     <div class="el-login-footer">
-      <span>Copyright © 2013-2022 <a href="https://leileigwl.gitee.io/"
-                                     target="_blank">leileigwl.gitee.io</a> 版权所有.</span>
+      <span>Copyright © 2013-2022 <a href="https://leileigwl.gitee.io/" target="_blank">leileigwl.gitee.io</a> 版权所有.</span>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: "login"
+<script setup>
+import {reactive, ref} from 'vue'
+import request from "@/util/request";
+import store from "@/store";
+import qs from 'qs'
+import {ElMessage} from 'element-plus'
+import router from "@/router";
+
+const loginRef = ref(null)
+const loginForm = ref({
+  username: '',
+  password: ''
+})
+const loginRules = {
+  username: [{required: true, trigger: 'blur', message: '请输入你的账号'}],
+  password: [{required: true, trigger: 'blur', message: '请输入你的密码'}]
 }
+const handleLogin = () => {
+  console.log("hello world");
+  loginRef.value.validate(async valid => {
+    if (valid) {
+      let result = await request.post("login?" + qs.stringify(loginForm.value))
+      let data = result.data;
+      if (data.code === 200) {
+        const token = data.authorization;
+        store.commit("SET_TOKEN", token)
+        await router.push("/");
+      } else {
+        ElMessage.error(data.msg)
+      }
+    } else {
+      console.log("验证失败")
+    }
+  })
+}
+
 </script>
 
 <style lang="scss" scoped>

@@ -2,31 +2,29 @@
 import axios from 'axios';
 import store from '@/store'
 
-let baseUrl="http://localhost:9090/";
+let baseUrl = "http://localhost:9090/";
 // 创建axios实例
 const httpService = axios.create({
     // url前缀-'http:xxx.xxx'
     // baseURL: process.env.BASE_API, // 需自定义
-    baseURL:baseUrl,
+    baseURL: baseUrl,
     // 请求超时时间
-    timeout: 3000 // 需自定义
+    timeout: 1000 // 需自定义
 });
 
 //添加请求和响应拦截器
 // 添加请求拦截器
-httpService.interceptors.request.use(function (config) {
+httpService.interceptors.request.use(config => {
     // 在发送请求之前做些什么
-    //config.headers.token=window.sessionStorage.getItem('token');
-    console.log("store="+store.getters.GET_TOKEN)
-    config.headers.token=store.getters.GET_TOKEN
+    config.headers.token = store.getters.GET_TOKEN
     return config;
-}, function (error) {
+}, err => {
     // 对请求错误做些什么
-    return Promise.reject(error);
+    return Promise.reject(err);
 });
 
 // 添加响应拦截器
-httpService.interceptors.response.use(function (response) {
+httpService.interceptors.response.use(response => {
     // 对响应数据做点什么
     return response;
 }, function (error) {
@@ -60,7 +58,7 @@ export function get(url, params = {}) {
  *  url:请求地址
  *  params:参数
  * */
-export function post(url, params = {}) {
+export function post(url, {params = {}, headers: {}}) {
     return new Promise((resolve, reject) => {
         httpService({
             url: url,
@@ -87,7 +85,7 @@ export function fileUpload(url, params = {}) {
             url: url,
             method: 'post',
             data: params,
-            headers: { 'Content-Type': 'multipart/form-data' }
+            headers: {'Content-Type': 'multipart/form-data'}
         }).then(response => {
             resolve(response);
         }).catch(error => {
@@ -96,7 +94,7 @@ export function fileUpload(url, params = {}) {
     });
 }
 
-export function getServerUrl(){
+export function getServerUrl() {
     return baseUrl;
 }
 
