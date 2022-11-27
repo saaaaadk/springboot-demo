@@ -20,7 +20,7 @@ public class SysUserController {
 
     @GetMapping("/user/list")
     public R userList(@RequestHeader(required = false) String token) {
-        if (StringUtil.isEmpty(token)) {
+        if (!StringUtil.isEmpty(token)) {
             Map<String, Object> resultMap = new HashMap<>();
             List<SysUser> list = sysUserService.list();
             resultMap.put("userList", list);
