@@ -1,9 +1,6 @@
 package com.Lei.config;
 
-import com.Lei.common.security.JwtAuthenticationFilter;
-import com.Lei.common.security.LoginFailureHandler;
-import com.Lei.common.security.LoginSuccessHandler;
-import com.Lei.common.security.MyUserDetailsServiceImpl;
+import com.Lei.common.security.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,8 +18,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private LoginSuccessHandler loginSuccessHandler;
+
     @Autowired
     private LoginFailureHandler loginFailureHandler;
+    @Autowired
+    private JwtLogoutSuccessHandler jwtLogoutSuccessHandler;
+    @Autowired
+    private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
     @Autowired
     private MyUserDetailsServiceImpl myUserDetailsService;
     private static final String URL_WHITELIST[] = {
@@ -33,11 +35,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/image/**",
     };
 
-   @Bean
-   JwtAuthenticationFilter jwtAuthenticationFilter() throws Exception {
-       JwtAuthenticationFilter jwtAuthenticationFilter =new JwtAuthenticationFilter(authenticationManager());
-       return jwtAuthenticationFilter;
-   }
+    @Bean
+    JwtAuthenticationFilter jwtAuthenticationFilter() throws Exception {
+        JwtAuthenticationFilter jwtAuthenticationFilter = new JwtAuthenticationFilter(authenticationManager());
+        return jwtAuthenticationFilter;
+    }
 
     @Bean
     BCryptPasswordEncoder bCryptPasswordEncoder() {
@@ -63,10 +65,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .successHandler(loginSuccessHandler)
                 .failureHandler(loginFailureHandler)
+                .and()
+                .logout()
+                .logoutSuccessHandler(jwtLogoutSuccessHandler)
                 // session禁用配置
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)//无状态session
+                //异常处理配置
+                .and()
+                .exceptionHandling()
+                .authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 //拦截器规则配置
                 .and()
                 .authorizeRequests()

@@ -6,6 +6,7 @@ import com.Lei.service.SysUserService;
 import com.Lei.utils.JwtUtils;
 import com.Lei.utils.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -19,6 +20,7 @@ public class SysUserController {
     private SysUserService sysUserService;
 
     @GetMapping("/user/list")
+    @PreAuthorize("hasAuthority('ROLE_admin')")
     public R userList(@RequestHeader(required = false) String token) {
         if (!StringUtil.isEmpty(token)) {
             Map<String, Object> resultMap = new HashMap<>();
